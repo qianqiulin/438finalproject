@@ -10,6 +10,9 @@
 		72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */; };
 		72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228132B02E0F100A04D93 /* GamblingViewController.swift */; };
 		72D228162B02E15D00A04D93 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228152B02E15D00A04D93 /* Struct.swift */; };
+		A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDA52B02FA2000A39605 /* ProfileViewController.swift */; };
+		A261CDAA2B0309A200A39605 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDA92B0309A200A39605 /* HistoryCell.swift */; };
+		A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */; };
 		BF531A202AFFF16800E86CE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */; };
 		BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */; };
 		BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */; };
@@ -46,6 +49,9 @@
 		72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		72D228132B02E0F100A04D93 /* GamblingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamblingViewController.swift; sourceTree = "<group>"; };
 		72D228152B02E15D00A04D93 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		A261CDA52B02FA2000A39605 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A261CDA92B0309A200A39605 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WUBET-LOGIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +123,9 @@
 				BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */,
 				BF81B1972AFF5EC9004AC194 /* ViewController.swift */,
 				BF81B1992AFF5ECA004AC194 /* Main.storyboard */,
+				A261CDA52B02FA2000A39605 /* ProfileViewController.swift */,
+				A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */,
+				A261CDA92B0309A200A39605 /* HistoryCell.swift */,
 				BF81B1C52AFF672C004AC194 /* CreateAccountViewController.swift */,
 				BF81B1C32AFF6615004AC194 /* LoginViewController.swift */,
 				BF81B19C2AFF5ECC004AC194 /* Assets.xcassets */,
@@ -291,8 +300,11 @@
 				BF81B1982AFF5EC9004AC194 /* ViewController.swift in Sources */,
 				72D228162B02E15D00A04D93 /* Struct.swift in Sources */,
 				BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */,
+				A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */,
+				A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */,
 				BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */,
 				72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */,
+				A261CDAA2B0309A200A39605 /* HistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
