@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */; };
+		72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228132B02E0F100A04D93 /* GamblingViewController.swift */; };
+		72D228162B02E15D00A04D93 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228152B02E15D00A04D93 /* Struct.swift */; };
+		BF531A202AFFF16800E86CE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */; };
+		BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */; };
+		BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */; };
+		BF81B1982AFF5EC9004AC194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1972AFF5EC9004AC194 /* ViewController.swift */; };
+		BF81B19B2AFF5ECA004AC194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF81B1992AFF5ECA004AC194 /* Main.storyboard */; };
+		BF81B19D2AFF5ECC004AC194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF81B19C2AFF5ECC004AC194 /* Assets.xcassets */; };
+		BF81B1A02AFF5ECC004AC194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF81B19E2AFF5ECC004AC194 /* LaunchScreen.storyboard */; };
+		BF81B1AB2AFF5ECC004AC194 /* WUBET_LOGINTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1AA2AFF5ECC004AC194 /* WUBET_LOGINTests.swift */; };
+		BF81B1B52AFF5ECC004AC194 /* WUBET_LOGINUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1B42AFF5ECC004AC194 /* WUBET_LOGINUITests.swift */; };
+		BF81B1B72AFF5ECC004AC194 /* WUBET_LOGINUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1B62AFF5ECC004AC194 /* WUBET_LOGINUITestsLaunchTests.swift */; };
+		BF81B1C42AFF6615004AC194 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1C32AFF6615004AC194 /* LoginViewController.swift */; };
+		BF81B1C62AFF672C004AC194 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1C52AFF672C004AC194 /* CreateAccountViewController.swift */; };
+		BFA9DCC82B02D91A003CCA79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA9DCC72B02D91A003CCA79 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF81B1A72AFF5ECC004AC194 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF81B1882AFF5EC9004AC194 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF81B18F2AFF5EC9004AC194;
+			remoteInfo = "WUBET-LOGIN";
+		};
+		BF81B1B12AFF5ECC004AC194 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF81B1882AFF5EC9004AC194 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF81B18F2AFF5EC9004AC194;
+			remoteInfo = "WUBET-LOGIN";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		72D228132B02E0F100A04D93 /* GamblingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamblingViewController.swift; sourceTree = "<group>"; };
+		72D228152B02E15D00A04D93 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WUBET-LOGIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BF81B1972AFF5EC9004AC194 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF81B19A2AFF5ECA004AC194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF81B19C2AFF5ECC004AC194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF81B19F2AFF5ECC004AC194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF81B1A12AFF5ECC004AC194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF81B1A62AFF5ECC004AC194 /* WUBET-LOGINTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WUBET-LOGINTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF81B1AA2AFF5ECC004AC194 /* WUBET_LOGINTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUBET_LOGINTests.swift; sourceTree = "<group>"; };
+		BF81B1B02AFF5ECC004AC194 /* WUBET-LOGINUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WUBET-LOGINUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF81B1B42AFF5ECC004AC194 /* WUBET_LOGINUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUBET_LOGINUITests.swift; sourceTree = "<group>"; };
+		BF81B1B62AFF5ECC004AC194 /* WUBET_LOGINUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUBET_LOGINUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF81B1C32AFF6615004AC194 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF81B1C52AFF672C004AC194 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		BFA9DCC72B02D91A003CCA79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF81B18D2AFF5EC9004AC194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF531A202AFFF16800E86CE6 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF81B1A32AFF5ECC004AC194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF81B1AD2AFF5ECC004AC194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF81B1872AFF5EC9004AC194 = {
+			isa = PBXGroup;
+			children = (
+				BF81B1922AFF5EC9004AC194 /* WUBET-LOGIN */,
+				BF81B1A92AFF5ECC004AC194 /* WUBET-LOGINTests */,
+				BF81B1B32AFF5ECC004AC194 /* WUBET-LOGINUITests */,
+				BF81B1912AFF5EC9004AC194 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF81B1912AFF5EC9004AC194 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */,
+				BF81B1A62AFF5ECC004AC194 /* WUBET-LOGINTests.xctest */,
+				BF81B1B02AFF5ECC004AC194 /* WUBET-LOGINUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF81B1922AFF5EC9004AC194 /* WUBET-LOGIN */ = {
+			isa = PBXGroup;
+			children = (
+				BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */,
+				BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */,
+				BF81B1972AFF5EC9004AC194 /* ViewController.swift */,
+				BF81B1992AFF5ECA004AC194 /* Main.storyboard */,
+				BF81B1C52AFF672C004AC194 /* CreateAccountViewController.swift */,
+				BF81B1C32AFF6615004AC194 /* LoginViewController.swift */,
+				BF81B19C2AFF5ECC004AC194 /* Assets.xcassets */,
+				BF81B19E2AFF5ECC004AC194 /* LaunchScreen.storyboard */,
+				BFA9DCC72B02D91A003CCA79 /* GoogleService-Info.plist */,
+				BF81B1A12AFF5ECC004AC194 /* Info.plist */,
+				72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */,
+				72D228132B02E0F100A04D93 /* GamblingViewController.swift */,
+				72D228152B02E15D00A04D93 /* Struct.swift */,
+			);
+			path = "WUBET-LOGIN";
+			sourceTree = "<group>";
+		};
+		BF81B1A92AFF5ECC004AC194 /* WUBET-LOGINTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF81B1AA2AFF5ECC004AC194 /* WUBET_LOGINTests.swift */,
+			);
+			path = "WUBET-LOGINTests";
+			sourceTree = "<group>";
+		};
+		BF81B1B32AFF5ECC004AC194 /* WUBET-LOGINUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF81B1B42AFF5ECC004AC194 /* WUBET_LOGINUITests.swift */,
+				BF81B1B62AFF5ECC004AC194 /* WUBET_LOGINUITestsLaunchTests.swift */,
+			);
+			path = "WUBET-LOGINUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF81B18F2AFF5EC9004AC194 /* WUBET-LOGIN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF81B1BA2AFF5ECC004AC194 /* Build configuration list for PBXNativeTarget "WUBET-LOGIN" */;
+			buildPhases = (
+				BF81B18C2AFF5EC9004AC194 /* Sources */,
+				BF81B18D2AFF5EC9004AC194 /* Frameworks */,
+				BF81B18E2AFF5EC9004AC194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WUBET-LOGIN";
+			packageProductDependencies = (
+				BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */,
+			);
+			productName = "WUBET-LOGIN";
+			productReference = BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF81B1A52AFF5ECC004AC194 /* WUBET-LOGINTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF81B1BD2AFF5ECC004AC194 /* Build configuration list for PBXNativeTarget "WUBET-LOGINTests" */;
+			buildPhases = (
+				BF81B1A22AFF5ECC004AC194 /* Sources */,
+				BF81B1A32AFF5ECC004AC194 /* Frameworks */,
+				BF81B1A42AFF5ECC004AC194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF81B1A82AFF5ECC004AC194 /* PBXTargetDependency */,
+			);
+			name = "WUBET-LOGINTests";
+			productName = "WUBET-LOGINTests";
+			productReference = BF81B1A62AFF5ECC004AC194 /* WUBET-LOGINTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF81B1AF2AFF5ECC004AC194 /* WUBET-LOGINUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF81B1C02AFF5ECC004AC194 /* Build configuration list for PBXNativeTarget "WUBET-LOGINUITests" */;
+			buildPhases = (
+				BF81B1AC2AFF5ECC004AC194 /* Sources */,
+				BF81B1AD2AFF5ECC004AC194 /* Frameworks */,
+				BF81B1AE2AFF5ECC004AC194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF81B1B22AFF5ECC004AC194 /* PBXTargetDependency */,
+			);
+			name = "WUBET-LOGINUITests";
+			productName = "WUBET-LOGINUITests";
+			productReference = BF81B1B02AFF5ECC004AC194 /* WUBET-LOGINUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF81B1882AFF5EC9004AC194 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BF81B18F2AFF5EC9004AC194 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					BF81B1A52AFF5ECC004AC194 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = BF81B18F2AFF5EC9004AC194;
+					};
+					BF81B1AF2AFF5ECC004AC194 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = BF81B18F2AFF5EC9004AC194;
+					};
+				};
+			};
+			buildConfigurationList = BF81B18B2AFF5EC9004AC194 /* Build configuration list for PBXProject "WUBET-LOGIN" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF81B1872AFF5EC9004AC194;
+			packageReferences = (
+				BF531A1E2AFFF16800E86CE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = BF81B1912AFF5EC9004AC194 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF81B18F2AFF5EC9004AC194 /* WUBET-LOGIN */,
+				BF81B1A52AFF5ECC004AC194 /* WUBET-LOGINTests */,
+				BF81B1AF2AFF5ECC004AC194 /* WUBET-LOGINUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF81B18E2AFF5EC9004AC194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF81B1A02AFF5ECC004AC194 /* LaunchScreen.storyboard in Resources */,
+				BFA9DCC82B02D91A003CCA79 /* GoogleService-Info.plist in Resources */,
+				BF81B19D2AFF5ECC004AC194 /* Assets.xcassets in Resources */,
+				BF81B19B2AFF5ECA004AC194 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF81B1A42AFF5ECC004AC194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF81B1AE2AFF5ECC004AC194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF81B18C2AFF5EC9004AC194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF81B1C62AFF672C004AC194 /* CreateAccountViewController.swift in Sources */,
+				BF81B1C42AFF6615004AC194 /* LoginViewController.swift in Sources */,
+				72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */,
+				BF81B1982AFF5EC9004AC194 /* ViewController.swift in Sources */,
+				72D228162B02E15D00A04D93 /* Struct.swift in Sources */,
+				BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */,
+				BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */,
+				72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF81B1A22AFF5ECC004AC194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF81B1AB2AFF5ECC004AC194 /* WUBET_LOGINTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF81B1AC2AFF5ECC004AC194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF81B1B72AFF5ECC004AC194 /* WUBET_LOGINUITestsLaunchTests.swift in Sources */,
+				BF81B1B52AFF5ECC004AC194 /* WUBET_LOGINUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF81B1A82AFF5ECC004AC194 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF81B18F2AFF5EC9004AC194 /* WUBET-LOGIN */;
+			targetProxy = BF81B1A72AFF5ECC004AC194 /* PBXContainerItemProxy */;
+		};
+		BF81B1B22AFF5ECC004AC194 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF81B18F2AFF5EC9004AC194 /* WUBET-LOGIN */;
+			targetProxy = BF81B1B12AFF5ECC004AC194 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF81B1992AFF5ECA004AC194 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF81B19A2AFF5ECA004AC194 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF81B19E2AFF5ECC004AC194 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF81B19F2AFF5ECC004AC194 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF81B1B82AFF5ECC004AC194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF81B1B92AFF5ECC004AC194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF81B1BB2AFF5ECC004AC194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C29WBF7ZLD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WUBET-LOGIN/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Youpeng-Cheng.WUBET-LOGIN";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF81B1BC2AFF5ECC004AC194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C29WBF7ZLD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WUBET-LOGIN/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Youpeng-Cheng.WUBET-LOGIN";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF81B1BE2AFF5ECC004AC194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Youpeng-Cheng.WUBET-LOGINTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WUBET-LOGIN.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WUBET-LOGIN";
+			};
+			name = Debug;
+		};
+		BF81B1BF2AFF5ECC004AC194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Youpeng-Cheng.WUBET-LOGINTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WUBET-LOGIN.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WUBET-LOGIN";
+			};
+			name = Release;
+		};
+		BF81B1C12AFF5ECC004AC194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Youpeng-Cheng.WUBET-LOGINUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WUBET-LOGIN";
+			};
+			name = Debug;
+		};
+		BF81B1C22AFF5ECC004AC194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Youpeng-Cheng.WUBET-LOGINUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WUBET-LOGIN";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF81B18B2AFF5EC9004AC194 /* Build configuration list for PBXProject "WUBET-LOGIN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF81B1B82AFF5ECC004AC194 /* Debug */,
+				BF81B1B92AFF5ECC004AC194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF81B1BA2AFF5ECC004AC194 /* Build configuration list for PBXNativeTarget "WUBET-LOGIN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF81B1BB2AFF5ECC004AC194 /* Debug */,
+				BF81B1BC2AFF5ECC004AC194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF81B1BD2AFF5ECC004AC194 /* Build configuration list for PBXNativeTarget "WUBET-LOGINTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF81B1BE2AFF5ECC004AC194 /* Debug */,
+				BF81B1BF2AFF5ECC004AC194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF81B1C02AFF5ECC004AC194 /* Build configuration list for PBXNativeTarget "WUBET-LOGINUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF81B1C12AFF5ECC004AC194 /* Debug */,
+				BF81B1C22AFF5ECC004AC194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF531A1E2AFFF16800E86CE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF531A1E2AFFF16800E86CE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BF81B1882AFF5EC9004AC194 /* Project object */;
+}
