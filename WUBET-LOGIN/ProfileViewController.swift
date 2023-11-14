@@ -38,7 +38,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameTableViewCell", for: indexPath) as? GameTableViewCell else {
-                fatalError("The dequeued cell is not an instance of HistoryCell.")
+                fatalError("The dequeued cell is not an instance of GameTableViewCell.")
             }
     
             let game = games[indexPath.row]
