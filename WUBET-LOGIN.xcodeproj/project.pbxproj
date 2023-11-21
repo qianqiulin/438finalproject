@@ -12,6 +12,7 @@
 		72D228162B02E15D00A04D93 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228152B02E15D00A04D93 /* Struct.swift */; };
 		A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDA52B02FA2000A39605 /* ProfileViewController.swift */; };
 		A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */; };
+		BF215D292B0C130200706194 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF215D282B0C130200706194 /* FirebaseFirestore */; };
 		BF531A202AFFF16800E86CE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */; };
 		BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */; };
 		BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */; };
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF531A202AFFF16800E86CE6 /* FirebaseAuth in Frameworks */,
+				BF215D292B0C130200706194 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +173,7 @@
 			name = "WUBET-LOGIN";
 			packageProductDependencies = (
 				BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */,
+				BF215D282B0C130200706194 /* FirebaseFirestore */,
 			);
 			productName = "WUBET-LOGIN";
 			productReference = BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */;
@@ -658,6 +661,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF215D282B0C130200706194 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF531A1E2AFFF16800E86CE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BF531A1E2AFFF16800E86CE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
