@@ -33,7 +33,8 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ToBettingDetail", sender: indexPath)
+        let dataToSend = SegueData(indexPath: indexPath, UID: self.UID)
+            performSegue(withIdentifier: "ToBettingDetail", sender: dataToSend)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
         db = Firestore.firestore()
         // Do any additional setup after loading the view.
         //getCollection()
-        print(UID)
+        print("UID is \(UID)")
         DispatchQueue.global(qos: .userInitiated).async {
             self.fetchUpcomingGames()
             self.addCompletedMatchInfo()
@@ -73,8 +74,11 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToBettingDetail"{
             if let BetDetailVC = segue.destination as? BettingDetailViewController,
-               let indexPath = sender as? IndexPath {
-                BetDetailVC.id=games[indexPath.row].id
+               let data = sender as? SegueData {
+                let indexPath=data.indexPath
+                print("Passing UID\(data.UID)")
+                BetDetailVC.UID=data.UID
+                BetDetailVC.matchid=games[indexPath.row].id
                 BetDetailVC.home=games[indexPath.row].home_team
                 BetDetailVC.away=games[indexPath.row].away_team
                 BetDetailVC.time=games[indexPath.row].commence_time
@@ -144,7 +148,7 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
                         // Document does not exist, proceed with write
                         documentRef.setData(newData) { error in
                             if let error = error {
-                                //print("Error writing document: \(error)")
+                                print("Error writing document: \(error)")
                             } else {
                                 //print("Document successfully written with ID \(documentID)")
                             }

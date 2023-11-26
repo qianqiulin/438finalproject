@@ -51,3 +51,9 @@ struct Score: Decodable {
     let name: String
     let score: String
 }
+
+
+struct SegueData {
+    var indexPath: IndexPath
+    var UID: String
+}

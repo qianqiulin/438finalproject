@@ -23,28 +23,30 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text else { return }
             guard let password = passwordTextField.text else { return }
             
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] firebaseResult, error in
-                guard let strongSelf = self else { return }
-
+            Auth.auth().signIn(withEmail: email, password: password) {  firebaseResult, error in
                 if let e = error {
                     print("Error creating user: \(e.localizedDescription)")
-                    strongSelf.errorMessage.text = "Invalid email or password."
+                    self.errorMessage.text = "Invalid email or password."
                 } else if let user = firebaseResult?.user {
-                    strongSelf.userUID = user.uid
                     print("User ID: \(user.uid)") // User's UID
-
-                    DispatchQueue.main.async {
-                        strongSelf.performSegue(withIdentifier: "goToNext", sender: strongSelf)
-                    }
+                    self.userUID=user.uid
+                    print(self.userUID!)
+                        self.performSegue(withIdentifier: "goToNext", sender: self)
                 }
             }
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToNext" {
-            if let nextViewController = segue.destination as? GamblingViewController {
-                nextViewController.UID = self.userUID!
+                if let nextViewController = segue.destination as? GamblingViewController,
+                   let loginViewController = sender as? LoginViewController{
+                    print(loginViewController.userUID!)
+                    if let uid = loginViewController.userUID {
+                        
+                        print("User ID to pass: \(uid)")
+                        nextViewController.UID = uid
+                    }
+                }
             }
-        }
     }
 
         
