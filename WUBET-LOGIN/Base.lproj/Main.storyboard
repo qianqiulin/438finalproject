@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E4Q-yG-Kd1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -61,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.64122137404581" y="306.33802816901408"/>
+            <point key="canvasLocation" x="820.61068702290072" y="322.53521126760563"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Qep-K1-ohD">
@@ -149,12 +148,12 @@
                         <outlet property="emailTextField" destination="1Iq-cO-fO9" id="cFS-NC-qeM"/>
                         <outlet property="errorMessage" destination="gyC-9d-kJu" id="jDX-zY-DfI"/>
                         <outlet property="passwordTextField" destination="cii-HG-ZxZ" id="ixZ-xf-AOa"/>
-                        <segue destination="6OY-rf-jbC" kind="show" identifier="goToNext" id="qqH-mN-IHs"/>
+                        <segue destination="6OY-rf-jbC" kind="show" identifier="goToNext" id="Y3s-sh-rlL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFm-uV-Eqp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.0916030534352" y="-56.338028169014088"/>
+            <point key="canvasLocation" x="1907.6335877862596" y="-173.2394366197183"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="WXE-q6-JFI">
@@ -240,12 +239,12 @@
                         <outlet property="emailTextField" destination="nJf-bY-sMh" id="cNx-rc-iek"/>
                         <outlet property="errorMessage" destination="BrV-Ee-WRr" id="ge5-yZ-4ko"/>
                         <outlet property="passwordTextField" destination="5y4-3D-Ie4" id="54G-Oq-5JO"/>
-                        <segue destination="6OY-rf-jbC" kind="show" identifier="goToNext" id="SUH-6n-QmM"/>
+                        <segue destination="6OY-rf-jbC" kind="show" identifier="goToNext" id="cfh-Vv-z0Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNh-fd-T1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.0916030534352" y="613.38028169014092"/>
+            <point key="canvasLocation" x="1863.3587786259541" y="693.66197183098598"/>
         </scene>
         <!--Settings-->
         <scene sceneID="R76-vC-cTf">
@@ -261,9 +260,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgb-se-n6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3990" y="306"/>
+            <point key="canvasLocation" x="4915.2671755725187" y="305.63380281690144"/>
         </scene>
-        <!--Bet-->
+        <!--Gambling View Controller-->
         <scene sceneID="Phc-eP-cuT">
             <objects>
                 <viewController id="ZLf-iX-fnV" customClass="GamblingViewController" customModule="WUBET_LOGIN" customModuleProvider="target" sceneMemberID="viewController">
@@ -315,14 +314,67 @@
                         <viewLayoutGuide key="safeArea" id="4bC-jv-2TS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bet" id="Bzm-US-Gkz"/>
+                    <navigationItem key="navigationItem" id="qRg-0Y-ePR"/>
                     <connections>
                         <outlet property="GameCollectionView" destination="hqz-oB-WeB" id="yTo-ho-R6w"/>
+                        <segue destination="nfw-YI-66z" kind="show" identifier="ToBettingDetail" id="Xfb-oy-gsn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJE-5t-Dqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3954.9618320610684" y="-412.67605633802822"/>
+            <point key="canvasLocation" x="5260" y="-413"/>
+        </scene>
+        <!--Betting Detail View Controller-->
+        <scene sceneID="i5X-rb-keg">
+            <objects>
+                <viewController id="nfw-YI-66z" customClass="BettingDetailViewController" customModule="WUBET_LOGIN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lHg-6F-7n7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Info:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg2-Zi-TpX">
+                                <rect key="frame" x="16" y="137" width="244" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="home win: odds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYx-wg-csE">
+                                <rect key="frame" x="27" y="283" width="121" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fDP-tx-XR3">
+                                <rect key="frame" x="60" y="411" width="265" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Away Team"/>
+                                    <segment title="Home Team"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34m-rl-djR">
+                                <rect key="frame" x="148" y="468" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-T7-nvj">
+                                <rect key="frame" x="148" y="628" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JFt-ue-u50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ag7-Un-a4m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFZ-K4-5ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6234.3511450381675" y="-430.28169014084511"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2To-hA-eWH">
@@ -335,32 +387,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZLf-iX-fnV" kind="relationship" relationship="viewControllers" id="Sct-E2-xig"/>
+                        <segue destination="f87-Wf-jN6" kind="relationship" relationship="viewControllers" id="Sct-E2-xig"/>
                         <segue destination="Ucj-iz-Gb4" kind="relationship" relationship="viewControllers" id="5OP-8W-UyY"/>
                         <segue destination="HVZ-4n-fiI" kind="relationship" relationship="viewControllers" id="2Ef-hc-o98"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzn-qr-5wP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2989" y="-123"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="4DP-ef-6qy">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E4Q-yG-Kd1" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vz7-26-6wn">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iUQ-Ye-Vz1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nwa-TU-h3D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-147" y="306"/>
+            <point key="canvasLocation" x="3379.3893129770991" y="-246.47887323943664"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Wvc-6P-7jU">
@@ -531,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9e-2W-qmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2872.5190839694656" y="595.77464788732402"/>
+            <point key="canvasLocation" x="3799.2366412213737" y="595.77464788732402"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Tce-3e-54h">
@@ -725,7 +759,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBM-ug-dAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3988.5496183206105" y="305.63380281690144"/>
+            <point key="canvasLocation" x="4915.2671755725187" y="305.63380281690144"/>
         </scene>
         <!--Title-->
         <scene sceneID="7pJ-JP-nsh">
@@ -795,7 +829,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRY-h7-esy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4858.7786259541981" y="305.63380281690144"/>
+            <point key="canvasLocation" x="5785.4961832061063" y="305.63380281690144"/>
         </scene>
         <!--Favorite Team View Controller-->
         <scene sceneID="hVC-P8-XAa">
@@ -864,7 +898,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lc3-OM-ncp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3988.5496183206105" y="1001.4084507042254"/>
+            <point key="canvasLocation" x="4978" y="1194"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8T9-q3-UXC">
@@ -930,11 +964,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBE-dG-ObW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5730.5343511450383" y="305.63380281690144"/>
+            <point key="canvasLocation" x="6657.2519083969464" y="305.63380281690144"/>
+        </scene>
+        <!--Bet-->
+        <scene sceneID="WMw-fM-7c0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f87-Wf-jN6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bet" id="Bzm-US-Gkz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xkw-p1-34l">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZLf-iX-fnV" kind="relationship" relationship="rootViewController" id="TbD-bu-r1i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOA-pU-01E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4411" y="-413"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R1j-BC-JFo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iC7-Hw-5Ow" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K3m-wt-nv9">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1OA-FT-ifi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5s-vi-ruQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106.10687022900763" y="322.53521126760563"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qqH-mN-IHs"/>
+        <segue reference="cfh-Vv-z0Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="NBA Primary logo" width="1059" height="2400"/>

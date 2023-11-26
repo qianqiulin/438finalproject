@@ -13,6 +13,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var userUID:String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,28 +24,28 @@ class CreateAccountViewController: UIViewController {
         guard let email = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
         
-        Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self]firebaseResult, error in
+            guard let strongSelf = self else { return }
             if let e = error {
                 print("Error creating user: \(e.localizedDescription)")
-                self.errorMessage.text = "Invalid email or password."
-            }else{
+                strongSelf.errorMessage.text = "Invalid email or password."
+            }else if let user = firebaseResult?.user {
+                strongSelf.userUID = user.uid
+                print("User ID: \(user.uid)") // User's UID
+
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "goToNext", sender: self)
+                    strongSelf.performSegue(withIdentifier: "goToNext", sender: strongSelf)
                 }
-                //self.navigationController?.shouldPerformSegue(withIdentifier: "goToNext", sender: self)
-                //self.shouldPerformSegue(withIdentifier: "goToNext", sender: self)
             }
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "goToNext" {
+            if let nextViewController = segue.destination as? GamblingViewController {
+                nextViewController.UID = self.userUID!
+            }
+        }
     }
-    */
 
 }

@@ -34,3 +34,20 @@ struct Outcome: Decodable {
     let name: String
     let price: Double
 }
+
+struct Gameinfo: Decodable {
+    let id: String
+    let sport_key: String
+    let sport_title: String
+    let commence_time: String
+    let completed: Bool
+    let home_team: String
+    let away_team: String
+    let scores: [Score]?
+    let last_update: String?
+}
+
+struct Score: Decodable {
+    let name: String
+    let score: String
+}

@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         // Do any additional setup after loading the view.
-        getCollection()
+        //getCollection()
     }
     var db: Firestore!
     func getCollection(){

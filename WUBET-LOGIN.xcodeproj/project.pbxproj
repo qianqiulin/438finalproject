@@ -10,6 +10,7 @@
 		72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */; };
 		72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228132B02E0F100A04D93 /* GamblingViewController.swift */; };
 		72D228162B02E15D00A04D93 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228152B02E15D00A04D93 /* Struct.swift */; };
+		72E35C432B11714E003F1BCB /* BettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */; };
 		A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDA52B02FA2000A39605 /* ProfileViewController.swift */; };
 		A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */; };
 		BF215D292B0C130200706194 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF215D282B0C130200706194 /* FirebaseFirestore */; };
@@ -49,6 +50,7 @@
 		72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		72D228132B02E0F100A04D93 /* GamblingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamblingViewController.swift; sourceTree = "<group>"; };
 		72D228152B02E15D00A04D93 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingDetailViewController.swift; sourceTree = "<group>"; };
 		A261CDA52B02FA2000A39605 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WUBET-LOGIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */,
 				72D228132B02E0F100A04D93 /* GamblingViewController.swift */,
 				72D228152B02E15D00A04D93 /* Struct.swift */,
+				72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */,
 			);
 			path = "WUBET-LOGIN";
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				72D228162B02E15D00A04D93 /* Struct.swift in Sources */,
 				BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */,
 				A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */,
+				72E35C432B11714E003F1BCB /* BettingDetailViewController.swift in Sources */,
 				A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */,
 				BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */,
 				72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */,
