@@ -31,14 +31,20 @@ class LoginViewController: UIViewController {
                     print("User ID: \(user.uid)") // User's UID
                     self.userUID=user.uid
                     print(self.userUID!)
-                        self.performSegue(withIdentifier: "goToNext", sender: self)
+                    let gamebleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "GambleVC") as! GamblingViewController
+                    gamebleVC.UID = user.uid
+//                    self.navigationController?.pushViewController(gamebleVC, animated: true)
+                    self.present(gamebleVC, animated: true)
+//                        self.performSegue(withIdentifier: "goToNext", sender: self)
                 }
             }
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToNext" {
+            print("enter1")
                 if let nextViewController = segue.destination as? GamblingViewController,
                    let loginViewController = sender as? LoginViewController{
+                    print("enter2")
                     print(loginViewController.userUID!)
                     if let uid = loginViewController.userUID {
                         

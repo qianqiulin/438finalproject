@@ -265,7 +265,7 @@
         <!--Gambling View Controller-->
         <scene sceneID="Phc-eP-cuT">
             <objects>
-                <viewController id="ZLf-iX-fnV" customClass="GamblingViewController" customModule="WUBET_LOGIN" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GambleVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZLf-iX-fnV" customClass="GamblingViewController" customModule="WUBET_LOGIN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="46k-qt-o4Y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
