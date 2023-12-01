@@ -7,16 +7,18 @@
 
 import UIKit
 import Firebase
-
+import FirebaseCore
+import FirebaseFirestore
 class CreateAccountViewController: UIViewController {
 
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var userUID:String?
+    var db: Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        db = Firestore.firestore()
         // Do any additional setup after loading the view.
     }
     
@@ -33,9 +35,26 @@ class CreateAccountViewController: UIViewController {
                 strongSelf.userUID = user.uid
                 print("User ID: \(user.uid)") // User's UID
 
-                DispatchQueue.main.async {
-                    strongSelf.performSegue(withIdentifier: "goToNext", sender: strongSelf)
+                //DispatchQueue.main.async {
+                    //strongSelf.performSegue(withIdentifier: "goToNext", sender: strongSelf)
+                //}
+                let newData: [String: Any] = [
+                    "userName": NSNull(),
+                    "bettingPoints": 1000,
+                    "favoriteTeam": NSNull()
+                ]
+                let customDocumentID = self!.userUID
+                self!.db.collection("users").document(customDocumentID!).setData(newData) { error in
+                    if let error = error {
+                        print("Error adding document: \(error)")
+                    } else {
+                        print("Document added with userUID")
+                    }
                 }
+                let gamebleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarViewController
+                gamebleVC.UID = user.uid
+                gamebleVC.modalPresentationStyle = .fullScreen
+                self!.present(gamebleVC, animated: true, completion: nil)
             }
         }
     }
