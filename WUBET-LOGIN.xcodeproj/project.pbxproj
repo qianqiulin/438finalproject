@@ -14,6 +14,7 @@
 		72E35C452B195C79003F1BCB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E35C442B195C79003F1BCB /* TabBarViewController.swift */; };
 		A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDA52B02FA2000A39605 /* ProfileViewController.swift */; };
 		A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */; };
+		A2F4945C2B19A896009153BD /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4945B2B19A896009153BD /* FirestoreManager.swift */; };
 		BF215D292B0C130200706194 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF215D282B0C130200706194 /* FirebaseFirestore */; };
 		BF531A202AFFF16800E86CE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF531A1F2AFFF16800E86CE6 /* FirebaseAuth */; };
 		BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		72E35C442B195C79003F1BCB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A261CDA52B02FA2000A39605 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		A2F4945B2B19A896009153BD /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		BF81B1902AFF5EC9004AC194 /* WUBET-LOGIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WUBET-LOGIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF81B1932AFF5EC9004AC194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF81B1952AFF5EC9004AC194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				BF81B1972AFF5EC9004AC194 /* ViewController.swift */,
 				BF81B1992AFF5ECA004AC194 /* Main.storyboard */,
 				A261CDA52B02FA2000A39605 /* ProfileViewController.swift */,
+				A2F4945B2B19A896009153BD /* FirestoreManager.swift */,
 				A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */,
 				BF81B1C52AFF672C004AC194 /* CreateAccountViewController.swift */,
 				BF81B1C32AFF6615004AC194 /* LoginViewController.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F4945C2B19A896009153BD /* FirestoreManager.swift in Sources */,
 				BF81B1C62AFF672C004AC194 /* CreateAccountViewController.swift in Sources */,
 				BF81B1C42AFF6615004AC194 /* LoginViewController.swift in Sources */,
 				72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */,
