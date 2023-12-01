@@ -33,7 +33,10 @@ class LoginViewController: UIViewController {
                     print(self.userUID!)
                     let gamebleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarViewController
                     gamebleVC.UID = user.uid
-                    self.navigationController?.pushViewController(gamebleVC, animated: true)
+                    gamebleVC.modalPresentationStyle = .fullScreen
+                    self.present(gamebleVC, animated: true, completion: nil)
+                    
+                    //self.navigationController?.pushViewController(gamebleVC, animated: true)
 //                    self.present(gamebleVC, animated: true)
 //                        self.performSegue(withIdentifier: "goToNext", sender: self)
                 }
