@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -462,16 +463,6 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B41-kd-0Zu">
                                                     <rect key="frame" x="289" y="41.666666666666664" width="50" height="21"/>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3D-M0-E6e">
-                                                    <rect key="frame" x="236" y="12" width="132" height="33.666666666666664"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="7MO-iT-dy6"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="dYN-pR-mIz"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBA Primary logo" translatesAutoresizingMaskIntoConstraints="NO" id="zIa-Aa-5UZ">
                                                     <rect key="frame" x="20" y="16.999999999999996" width="60" height="60.666666666666657"/>
                                                     <constraints>
@@ -488,6 +479,16 @@
                                                     <color key="textColor" red="0.39942303299999998" green="0.39974853399999999" blue="0.3994735479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3D-M0-E6e">
+                                                    <rect key="frame" x="241" y="26" width="132" height="33.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="7MO-iT-dy6"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="dYN-pR-mIz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="WxC-xZ-hML" firstAttribute="top" secondItem="tGs-tQ-psu" secondAttribute="bottom" constant="1.3333333333333357" id="1eg-JD-LTd"/>
@@ -498,7 +499,7 @@
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="8" symbolic="YES" id="7Lq-oU-YF3"/>
                                                 <constraint firstItem="YSs-qo-qUR" firstAttribute="leading" secondItem="zIa-Aa-5UZ" secondAttribute="trailing" constant="17" id="7Nv-eW-yDg"/>
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="43" id="DkV-8z-5mW"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="v3D-M0-E6e" secondAttribute="trailing" constant="5" id="Dv0-KA-34Y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="v3D-M0-E6e" secondAttribute="trailing" id="Dv0-KA-34Y"/>
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="8" symbolic="YES" id="EBG-77-Pcd"/>
                                                 <constraint firstItem="WxC-xZ-hML" firstAttribute="leading" secondItem="zIa-Aa-5UZ" secondAttribute="trailing" constant="17" id="EI3-3n-ffY"/>
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="8" symbolic="YES" id="HqV-0p-qwD"/>
@@ -507,12 +508,12 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="YSs-qo-qUR" secondAttribute="trailing" constant="48" id="Np9-cj-efy"/>
                                                 <constraint firstItem="WxC-xZ-hML" firstAttribute="top" secondItem="B41-kd-0Zu" secondAttribute="bottom" constant="0.3333333333333357" id="S02-fX-WM4"/>
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="8" symbolic="YES" id="Uz2-S0-Ud3"/>
-                                                <constraint firstItem="v3D-M0-E6e" firstAttribute="top" secondItem="C7C-5V-RUT" secondAttribute="topMargin" constant="1" id="Vpb-37-sgp"/>
+                                                <constraint firstItem="v3D-M0-E6e" firstAttribute="top" secondItem="C7C-5V-RUT" secondAttribute="topMargin" constant="15" id="Vpb-37-sgp"/>
                                                 <constraint firstItem="zIa-Aa-5UZ" firstAttribute="bottom" secondItem="WxC-xZ-hML" secondAttribute="bottom" constant="-6.3333333333333428" id="XRA-gW-BWm"/>
                                                 <constraint firstItem="v3D-M0-E6e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zIa-Aa-5UZ" secondAttribute="trailing" constant="8" symbolic="YES" id="YGE-bW-Tsg"/>
                                                 <constraint firstItem="WxC-xZ-hML" firstAttribute="top" secondItem="tGs-tQ-psu" secondAttribute="bottom" constant="1.3333333333333357" id="YSM-aF-96e"/>
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="8" symbolic="YES" id="Yqf-aM-Pco"/>
-                                                <constraint firstItem="zIa-Aa-5UZ" firstAttribute="centerY" secondItem="v3D-M0-E6e" secondAttribute="centerY" constant="18.5" id="awj-XG-ofZ"/>
+                                                <constraint firstItem="zIa-Aa-5UZ" firstAttribute="centerY" secondItem="v3D-M0-E6e" secondAttribute="centerY" constant="4.5" id="awj-XG-ofZ"/>
                                                 <constraint firstItem="YSs-qo-qUR" firstAttribute="top" secondItem="C7C-5V-RUT" secondAttribute="topMargin" constant="2" id="bN4-8W-NNH"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="WxC-xZ-hML" secondAttribute="trailing" id="dfi-l8-G5N"/>
                                                 <constraint firstItem="B41-kd-0Zu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGs-tQ-psu" secondAttribute="trailing" constant="8" symbolic="YES" id="djM-ut-yXX"/>
