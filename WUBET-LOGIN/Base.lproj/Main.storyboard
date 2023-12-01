@@ -388,10 +388,10 @@
             </objects>
             <point key="canvasLocation" x="6234.3511450381675" y="-430.28169014084511"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="2To-hA-eWH">
             <objects>
-                <tabBarController id="6OY-rf-jbC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6OY-rf-jbC" customClass="TabBarViewController" customModule="WUBET_LOGIN" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="JHp-iE-Ie4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="omq-6P-Ldd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -1017,7 +1017,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cfh-Vv-z0Z"/>
+        <segue reference="Y3s-sh-rlL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="NBA Primary logo" width="1059" height="2400"/>

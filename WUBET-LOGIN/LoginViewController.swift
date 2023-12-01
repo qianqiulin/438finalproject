@@ -31,10 +31,10 @@ class LoginViewController: UIViewController {
                     print("User ID: \(user.uid)") // User's UID
                     self.userUID=user.uid
                     print(self.userUID!)
-                    let gamebleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "GambleVC") as! GamblingViewController
+                    let gamebleVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TabBarController") as! TabBarViewController
                     gamebleVC.UID = user.uid
-//                    self.navigationController?.pushViewController(gamebleVC, animated: true)
-                    self.present(gamebleVC, animated: true)
+                    self.navigationController?.pushViewController(gamebleVC, animated: true)
+//                    self.present(gamebleVC, animated: true)
 //                        self.performSegue(withIdentifier: "goToNext", sender: self)
                 }
             }
