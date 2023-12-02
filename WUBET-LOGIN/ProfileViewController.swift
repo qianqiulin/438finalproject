@@ -113,7 +113,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             profitColor = .gray
             profitText = String(format: "+%.2f", betHistory.totalwinning)
-            details = "Bet: \(userBetChoice)"
+            details = "Bet: \(userBetChoice) - In Progress"
             matchupName = "\(userBetChoice) vs \(opposingTeam)"
         }
 
