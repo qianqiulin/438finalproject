@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -358,16 +357,23 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-T7-nvj">
-                                <rect key="frame" x="148" y="628" width="75" height="35"/>
+                                <rect key="frame" x="151" y="628" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Bet it!"/>
                                 <connections>
                                     <action selector="OnceClicked:" destination="nfw-YI-66z" eventType="touchUpInside" id="muN-Uc-FJ5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If win you can get: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsT-5h-4nX">
-                                <rect key="frame" x="82" y="529" width="216" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If win you can get: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsT-5h-4nX">
+                                <rect key="frame" x="82" y="529" width="216" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Amount:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU9-8T-q3x">
+                                <rect key="frame" x="161" y="108" width="195" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -382,6 +388,7 @@
                         <outlet property="BetAmount" destination="34m-rl-djR" id="FmJ-oJ-NtS"/>
                         <outlet property="GameInfo" destination="Lg2-Zi-TpX" id="xtx-Lv-lRO"/>
                         <outlet property="TeamSelector" destination="fDP-tx-XR3" id="u7H-fa-NZy"/>
+                        <outlet property="totalAmount" destination="iU9-8T-q3x" id="fuI-Eg-eah"/>
                         <outlet property="winAmount" destination="LsT-5h-4nX" id="H7v-3f-7iw"/>
                     </connections>
                 </viewController>
@@ -480,7 +487,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3D-M0-E6e">
-                                                    <rect key="frame" x="241" y="26" width="132" height="33.666666666666664"/>
+                                                    <rect key="frame" x="241" y="25.999999999999996" width="132" height="33.666666666666657"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="7MO-iT-dy6"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="132" id="dYN-pR-mIz"/>
@@ -982,8 +989,9 @@
         <!--Bet-->
         <scene sceneID="WMw-fM-7c0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOA-pU-01E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f87-Wf-jN6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bet" id="Bzm-US-Gkz"/>
+                    <tabBarItem key="tabBarItem" title="Bet" image="betting" id="Bzm-US-Gkz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xkw-p1-34l">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -994,7 +1002,6 @@
                         <segue destination="ZLf-iX-fnV" kind="relationship" relationship="rootViewController" id="TbD-bu-r1i"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tOA-pU-01E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4411" y="-413"/>
         </scene>
@@ -1024,6 +1031,7 @@
         <image name="NBA Primary logo" width="1059" height="2400"/>
         <image name="arrowshape.turn.up.left.circle" catalog="system" width="128" height="123"/>
         <image name="basketball" catalog="system" width="128" height="123"/>
+        <image name="betting" width="25" height="25"/>
         <image name="gameImageName1" width="90" height="90"/>
         <image name="hand.point.up" catalog="system" width="106" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>

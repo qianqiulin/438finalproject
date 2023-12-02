@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 class BettingDetailViewController: UIViewController {
+    @IBOutlet weak var totalAmount: UILabel!
     var time:String=""
     var home:String=""
     var away:String=""
@@ -18,6 +19,8 @@ class BettingDetailViewController: UIViewController {
     var matchid:String=""
     var UID:String="not getting"
     var db: Firestore!
+    var userName=""
+    var userPoints=0.0
     @IBOutlet weak var winAmount: UILabel!
     @IBOutlet weak var BetAmount: UITextField!
     @IBOutlet weak var TeamSelector: UISegmentedControl!
@@ -27,12 +30,29 @@ class BettingDetailViewController: UIViewController {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
-        let gameInfoString = "Match Time: \(time), Teams: \(away) vs. \(home). Odds - \(team1.1): \(team1.0), \(team2.1): \(team2.0)"
+        let gameInfoString = "Match Time: \(time), Teams: \(away)(away) vs. \(home)(home). Odds - \(team1.1): \(team1.0), \(team2.1): \(team2.0)"
         GameInfo.numberOfLines=0
         GameInfo.text=gameInfoString
         print(home)
         print(away)
         print(UID)
+        let firestoreManager = FirestoreManager()
+        firestoreManager.fetchUserData(uid: UID) { [weak self] userData in
+            DispatchQueue.main.async {
+
+                if let userData = userData {
+                                    print("User Data received: \(userData)")
+                                    self?.userName = userData.userName ?? "User"
+                                    self?.userPoints = userData.bettingPoints
+                    self!.totalAmount.text="Current Amount:\(self!.userPoints)"
+                                    // Optional: handle favorite team
+                                } else {
+                                    print("Failed to fetch user data or data is nil.")
+                                }
+                
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -62,6 +82,7 @@ class BettingDetailViewController: UIViewController {
                     "time": time,
                     "totalwinning":totalwinning,
                     "selectTeam":home,
+                    "otherTeam":away,
                     "matchid":matchid,
                     "UID":self.UID,
                     "status":false
@@ -71,6 +92,24 @@ class BettingDetailViewController: UIViewController {
                         print("Error adding document: \(error)")
                     } else {
                         print("Document added with auto-generated ID")
+                        self.userPoints=self.userPoints-number
+                        self.totalAmount.text="Current Balance:\(self.userPoints)"
+                        self.winAmount.numberOfLines=0
+                        self.winAmount.text="You successfully bet it! If \(self.home) win, you will get \(totalwinning)"
+                        let documentRef = self.db.collection("users").document(self.UID)
+                        let updatedData: [String: Any] = [
+                            "userName": self.userName,
+                            "bettingPoints": self.userPoints
+                            // Add more fields if needed
+                        ]
+                        documentRef.setData(updatedData, merge: true) { error in
+                            if let error = error {
+                                print("Error updating document: \(error.localizedDescription)")
+                            } else {
+                                print("Document updated successfully")
+                            }
+                        }
+
                     }
                 }
             }
@@ -80,6 +119,7 @@ class BettingDetailViewController: UIViewController {
                     "time": time,
                     "totalwinning":totalwinning,
                     "selectTeam":away,
+                    "otherTeam":home,
                     "matchid":matchid,
                     "UID":self.UID,
                     "status":false
@@ -89,6 +129,23 @@ class BettingDetailViewController: UIViewController {
                         print("Error adding document: \(error)")
                     } else {
                         print("Document added with auto-generated ID")
+                        self.userPoints=self.userPoints-number
+                        self.totalAmount.text="Current Balance:\(self.userPoints)"
+                        self.winAmount.numberOfLines=0
+                        self.winAmount.text="You successfully bet it! If \(self.home) win, you will get \(totalwinning)"
+                        let documentRef = self.db.collection("users").document(self.UID)
+                        let updatedData: [String: Any] = [
+                            "userName": self.userName,
+                            "bettingPoints": self.userPoints
+                            // Add more fields if needed
+                        ]
+                        documentRef.setData(updatedData, merge: true) { error in
+                            if let error = error {
+                                print("Error updating document: \(error.localizedDescription)")
+                            } else {
+                                print("Document updated successfully")
+                            }
+                        }
                     }
                 }
             }

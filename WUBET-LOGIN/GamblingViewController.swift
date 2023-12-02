@@ -1,12 +1,6 @@
-//
-//  GamblingViewController.swift
-//  WUBET-LOGIN
-//
-//  Created by 钱秋霖 on 2023/11/13.
-//
 
 import UIKit
-
+import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 class GamblingViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
@@ -43,6 +37,13 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
+        if let user = Auth.auth().currentUser {
+            UID = user.uid
+            // Use the UID to fetch user-specific data
+        } else {
+            print("No user is currently logged in.")
+            // Handle the case where there is no logged-in user
+        }
         // Do any additional setup after loading the view.
         //getCollection()
         print("UID is \(UID)")
@@ -92,22 +93,22 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
         }
     }
     var db: Firestore!
-    func getCollection(){
-        db.collection("matchinfo").getDocuments { (querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                guard let querySnapshot = querySnapshot else {
-                    print("No documents found.")
-                    return
-                }
-
-                for document in querySnapshot.documents {
-                    print("\(document.documentID): \(document.data())")
-                }
-            }
-        }
-    }
+//    func getCollection(){
+//        db.collection("matchinfo").getDocuments { (querySnapshot, error) in
+//            if let error = error {
+//                print("Error getting documents: \(error)")
+//            } else {
+//                guard let querySnapshot = querySnapshot else {
+//                    print("No documents found.")
+//                    return
+//                }
+//
+//                for document in querySnapshot.documents {
+//                    print("\(document.documentID): \(document.data())")
+//                }
+//            }
+//        }
+//    }
     func addCompletedMatchInfo() {
         let urlString = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=3&apiKey=aca376adaa18a88798937e298ae6a72e"
 
