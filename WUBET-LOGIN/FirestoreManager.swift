@@ -93,7 +93,7 @@ struct User {
 
     init(documentData: [String: Any]) {
         self.userName = documentData["userName"] as? String
-        self.bettingPoints = documentData["bettingPoints"] as? Double ?? 0.0
+        self.bettingPoints = documentData["bettingPoints"] as? Double ?? 0.00
         self.favoriteTeam = documentData["favoriteTeam"] as? String
     }
 }

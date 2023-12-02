@@ -51,66 +51,29 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initialize the spinner
         spinner = UIActivityIndicatorView(style: .medium)
-           spinner.center = self.view.center
-           spinner.hidesWhenStopped = true
-           view.addSubview(spinner)
+        spinner.center = self.view.center
+        spinner.hidesWhenStopped = true
+        view.addSubview(spinner)
 
-           // Start the spinner
-           spinner.startAnimating()
+        // Start the spinner
+        spinner.startAnimating()
+
         // Set up the profile image view to be circular
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.clipsToBounds = true
-        
 
-        var userUID = ""
-        if let user = Auth.auth().currentUser {
-            userUID = user.uid
-            // Use the UID to fetch user-specific data
-        } else {
-            print("No user is currently logged in.")
-            // Handle the case where there is no logged-in user
-        }
-        let firestoreManager = FirestoreManager()
-        firestoreManager.fetchUserData(uid: userUID) { [weak self] userData in
-            DispatchQueue.main.async {
-                self?.spinner.stopAnimating()
+        // Set up pull to refresh
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
 
-                if let userData = userData {
-                                    print("User Data received: \(userData)")
-                                    self?.nameLabel.text = userData.userName ?? "User"
-                                    self?.tokensLabel.text = "Points: \(userData.bettingPoints)"
-                                    // Optional: handle favorite team
-                                } else {
-                                    print("Failed to fetch user data or data is nil.")
-                                }
-            }
+        // Fetch data
+        fetchData {
+            self.spinner.stopAnimating()
         }
-        firestoreManager.fetchBetHistory(forUID: userUID) { [weak self] histories in
-            self?.betHistories = histories
-            
-            // Extract match IDs from the fetched bet histories
-            let matchIDs = histories.map { $0.matchid }
-            print("Fetched MatchInfos matchIDs: \(matchIDs)")
-            
-            firestoreManager.fetchMatchInfos(matchIDs: matchIDs) { [weak self] matchInfosArray in
-                print("Fetched MatchInfos Array: \(matchInfosArray)")
-                
-                // Filter out any MatchInfo objects that don't have a matchid set
-                let validMatchInfos = matchInfosArray.compactMap { matchInfo -> (String, MatchInfo)? in
-                    guard let matchid = matchInfo.matchid else { return nil }
-                    return (matchid, matchInfo)
-                }
-                
-                self?.matchInfos = Dictionary(uniqueKeysWithValues: validMatchInfos)
-                print("MatchInfos Dictionary: \(self?.matchInfos ?? [:])")
-                
-                DispatchQueue.main.async {
-                    self?.spinner.stopAnimating()
-                    self?.tableView.reloadData()
-                }
-            }
-        }
+
         // Set up the table view
         tableView.delegate = self
         tableView.dataSource = self
@@ -145,6 +108,56 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         return cell
     }
+    
+    @objc private func refreshData(_ sender: UIRefreshControl) {
+        fetchData {
+            sender.endRefreshing()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData {
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func fetchData(completion: @escaping () -> Void) {
+        guard let userUID = Auth.auth().currentUser?.uid else {
+            print("No user is currently logged in.")
+            completion()
+            return
+        }
+
+        let firestoreManager = FirestoreManager()
+        firestoreManager.fetchUserData(uid: userUID) { [weak self] userData in
+            DispatchQueue.main.async {
+                if let userData = userData {
+                    self?.nameLabel.text = userData.userName ?? "User"
+                    self?.tokensLabel.text = "Points: \(userData.bettingPoints)"
+                }
+            }
+        }
+
+        firestoreManager.fetchBetHistory(forUID: userUID) { [weak self] histories in
+            self?.betHistories = histories
+
+            let matchIDs = histories.map { $0.matchid }
+            firestoreManager.fetchMatchInfos(matchIDs: matchIDs) { [weak self] matchInfosArray in
+                let validMatchInfos = matchInfosArray.compactMap { matchInfo -> (String, MatchInfo)? in
+                    guard let matchid = matchInfo.matchid else { return nil }
+                    return (matchid, matchInfo)
+                }
+
+                self?.matchInfos = Dictionary(uniqueKeysWithValues: validMatchInfos)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    completion()
+                }
+            }
+        }
+    }
+    
     
     func getTeamAbbreviation(for teamName: String) -> String {
         return nbaTeamAbbreviations[teamName] ?? teamName
