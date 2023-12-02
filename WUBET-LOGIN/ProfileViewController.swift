@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     // MARK: - Properties
+    var firestoreManager = FirestoreManager()
     var spinner: UIActivityIndicatorView!
     var betHistories = [BetHistory]()
     var matchInfos = [String: MatchInfo]()
@@ -90,23 +91,62 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         let betHistory = betHistories[indexPath.row]
-        if let matchInfo = matchInfos[betHistory.matchid] {
-            // Format the date
-            print("Fetched BetHistory: \(matchInfo)")
-            
-            // Configure the cell
-            let awayTeamAbbreviation = getTeamAbbreviation(for: matchInfo.away)
-            let homeTeamAbbreviation = getTeamAbbreviation(for: matchInfo.home)
-            let matchDateString = convertToUserFriendlyDate(matchInfo.time)
-            
-            cell.configure(withGame: (name: "\(awayTeamAbbreviation) vs \(homeTeamAbbreviation)",
-                                      date: matchDateString,
-                                      details: "Status: \(betHistory.status)",
-                                      profit: betHistory.totalwinning,
-                                      imageName: "nba"))
+        let matchFinished = matchInfos[betHistory.matchid] != nil
+        let userBetChoice = getTeamAbbreviation(for: betHistory.selectTeam)
+        let opposingTeam = getTeamAbbreviation(for: betHistory.otherTeam)
+        let matchDate = convertToUserFriendlyDate(betHistory.time)
+        if matchFinished && !betHistory.status {
+               updateUserBettingPoints(forBetHistory: betHistory)
+           }
+
+        let details: String
+        let profitText: String
+        let profitColor: UIColor
+        var matchupName: String
+
+        if matchFinished, let matchInfo = matchInfos[betHistory.matchid] {
+            let userWon = determineIfUserWon(betHistory: betHistory, matchInfo: matchInfo)
+            profitColor = userWon ? .green : .red
+            profitText = userWon ? String(format: "+%.2f", betHistory.totalwinning) : "+0"
+            details = "Bet: \(userBetChoice) - Score: \(matchInfo.away_score) - \(matchInfo.home_score)"
+            matchupName = "\(getTeamAbbreviation(for: matchInfo.away)) vs \(getTeamAbbreviation(for: matchInfo.home))"
+        } else {
+            profitColor = .gray
+            profitText = String(format: "+%.2f", betHistory.totalwinning)
+            details = "Bet: \(userBetChoice)"
+            matchupName = "\(userBetChoice) vs \(opposingTeam)"
         }
-        
+
+        cell.configure(withGame: (name: matchupName,
+                                  date: matchDate,
+                                  details: details,
+                                  profit: profitText,
+                                  profitColor: profitColor,
+                                  imageName: "nba"))
+
         return cell
+    }
+    
+    func isMatchFinished(matchTime: String) -> Bool {
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0) // Parse the date as UTC
+
+        guard let matchDateUTC = isoDateFormatter.date(from: matchTime) else { return false }
+
+        // Convert the current time to UTC before comparison
+        let currentTimeUTC = Date().addingTimeInterval(TimeInterval(-TimeZone.current.secondsFromGMT()))
+
+        return matchDateUTC < currentTimeUTC
+    }
+    
+    func determineIfUserWon(betHistory: BetHistory, matchInfo: MatchInfo) -> Bool {
+        guard let awayScore = Int(matchInfo.away_score),
+              let homeScore = Int(matchInfo.home_score) else {
+            return false
+        }
+
+        let winningTeam = awayScore > homeScore ? matchInfo.away : matchInfo.home
+        return betHistory.selectTeam == winningTeam
     }
     
     @objc private func refreshData(_ sender: UIRefreshControl) {
@@ -129,21 +169,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             return
         }
 
-        let firestoreManager = FirestoreManager()
-        firestoreManager.fetchUserData(uid: userUID) { [weak self] userData in
+        self.firestoreManager.fetchUserData(uid: userUID) { [weak self] userData in
             DispatchQueue.main.async {
                 if let userData = userData {
-                    self?.nameLabel.text = userData.userName ?? "User"
+                    let displayName = userData.userName?.isEmpty == false ? userData.userName! : "User"
+                    self?.nameLabel.text = displayName
                     self?.tokensLabel.text = "Points: \(userData.bettingPoints)"
                 }
             }
         }
 
-        firestoreManager.fetchBetHistory(forUID: userUID) { [weak self] histories in
+        self.firestoreManager.fetchBetHistory(forUID: userUID) { [weak self] histories in
             self?.betHistories = histories
 
             let matchIDs = histories.map { $0.matchid }
-            firestoreManager.fetchMatchInfos(matchIDs: matchIDs) { [weak self] matchInfosArray in
+            self?.firestoreManager.fetchMatchInfos(matchIDs: matchIDs) { [weak self] matchInfosArray in
                 let validMatchInfos = matchInfosArray.compactMap { matchInfo -> (String, MatchInfo)? in
                     guard let matchid = matchInfo.matchid else { return nil }
                     return (matchid, matchInfo)
@@ -158,23 +198,35 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    
     func getTeamAbbreviation(for teamName: String) -> String {
         return nbaTeamAbbreviations[teamName] ?? teamName
     }
     func convertToUserFriendlyDate(_ isoDateString: String) -> String {
         let isoDateFormatter = ISO8601DateFormatter()
-        
+        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+
         let userFriendlyDateFormatter = DateFormatter()
         userFriendlyDateFormatter.dateStyle = .medium
         userFriendlyDateFormatter.timeStyle = .short
-        
+        userFriendlyDateFormatter.timeZone = TimeZone.current
+
         if let date = isoDateFormatter.date(from: isoDateString) {
             return userFriendlyDateFormatter.string(from: date)
         } else {
             return "Invalid Date"
+       
         }
     }
-    
-    
+    func updateUserBettingPoints(forBetHistory betHistory: BetHistory) {
+        guard let userUID = Auth.auth().currentUser?.uid else {
+            print("No user is currently logged in.")
+            return
+        }
+        
+        firestoreManager.updateBettingPoints(forUser: userUID, withBetHistory: betHistory, matchInfos: matchInfos) {
+            // Handle completion, such as reloading data or updating UI
+            print("Betting points and bet status updated.")
+        }
+        
+    }
 }

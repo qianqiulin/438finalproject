@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -424,9 +425,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="gameImageName1" translatesAutoresizingMaskIntoConstraints="NO" id="g43-Sh-zIQ">
-                                <rect key="frame" x="114" y="172" width="165" height="139"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOI-xI-QIi">
                                 <rect key="frame" x="175.66666666666666" y="143" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -434,10 +432,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rbb-Ui-ErG">
-                                <rect key="frame" x="0.0" y="319" width="393" height="481"/>
+                                <rect key="frame" x="0.0" y="291" width="393" height="509"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="481" id="dwr-0E-qMJ"/>
+                                    <constraint firstAttribute="height" constant="509" id="dwr-0E-qMJ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="historyCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameTableViewCell" rowHeight="95" id="WDF-ID-Kgo" customClass="GameTableViewCell" customModule="WUBET_LOGIN" customModuleProvider="target">
@@ -557,6 +555,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="gameImageName1" translatesAutoresizingMaskIntoConstraints="NO" id="g43-Sh-zIQ">
+                                <rect key="frame" x="145" y="172" width="103" height="111"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XHN-32-DZh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -567,8 +568,8 @@
                             <constraint firstItem="qOI-xI-QIi" firstAttribute="top" secondItem="zUj-EH-oQL" secondAttribute="bottom" constant="3" id="Gls-9B-uHY"/>
                             <constraint firstItem="Rbb-Ui-ErG" firstAttribute="top" secondItem="g43-Sh-zIQ" secondAttribute="bottom" constant="8" id="S5d-oY-TWK"/>
                             <constraint firstItem="Rbb-Ui-ErG" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" id="iar-5S-xsX"/>
-                            <constraint firstItem="g43-Sh-zIQ" firstAttribute="centerX" secondItem="qOI-xI-QIi" secondAttribute="centerX" id="jTq-Jf-mzw"/>
-                            <constraint firstItem="g43-Sh-zIQ" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" constant="114" id="lt4-3H-GI5"/>
+                            <constraint firstItem="g43-Sh-zIQ" firstAttribute="centerX" secondItem="qOI-xI-QIi" secondAttribute="centerX" constant="-0.16666666666665719" id="jTq-Jf-mzw"/>
+                            <constraint firstItem="g43-Sh-zIQ" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" constant="145" id="lt4-3H-GI5"/>
                             <constraint firstItem="g43-Sh-zIQ" firstAttribute="top" secondItem="qOI-xI-QIi" secondAttribute="bottom" constant="8" symbolic="YES" id="ohg-cD-eEX"/>
                             <constraint firstItem="zUj-EH-oQL" firstAttribute="top" secondItem="XHN-32-DZh" secondAttribute="top" id="p0G-TM-vBO"/>
                             <constraint firstItem="Rbb-Ui-ErG" firstAttribute="centerX" secondItem="g43-Sh-zIQ" secondAttribute="centerX" id="vrA-cx-hYG"/>
@@ -989,7 +990,6 @@
         <!--Bet-->
         <scene sceneID="WMw-fM-7c0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tOA-pU-01E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f87-Wf-jN6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bet" image="betting" id="Bzm-US-Gkz"/>
                     <toolbarItems/>
@@ -1002,6 +1002,7 @@
                         <segue destination="ZLf-iX-fnV" kind="relationship" relationship="rootViewController" id="TbD-bu-r1i"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOA-pU-01E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4411" y="-413"/>
         </scene>

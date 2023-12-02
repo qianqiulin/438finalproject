@@ -56,23 +56,93 @@ class FirestoreManager {
     }
     
     func fetchUserData(uid: String, completion: @escaping (User?) -> Void) {
-            let db = Firestore.firestore()
-            db.collection("users").document(uid).getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let userData = User(documentData: document.data() ?? [:])
-                    completion(userData)
-                } else {
-                    print("Document does not exist or error: \(error?.localizedDescription ?? "Unknown error")")
-                    completion(nil)
-                }
+        let db = Firestore.firestore()
+        db.collection("users").document(uid).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let userData = User(documentData: document.data() ?? [:])
+                completion(userData)
+            } else {
+                print("Document does not exist or error: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
             }
         }
+    }
+    
+    func updateBettingPoints(forUser uid: String, withBetHistory betHistory: BetHistory, matchInfos: [String: MatchInfo], completion: @escaping () -> Void) {
+        let db = Firestore.firestore()
+        
+        // Fetch the user data first
+        fetchUserData(uid: uid) { [weak self] userData in
+            guard var userData = userData else {
+                print("User data not found")
+                completion()
+                return
+            }
+            
+            // Prepare the batch
+            let batch = db.batch()
+            
+            // Reference to the user document in the 'users' collection
+            let userRef = db.collection("users").document(uid)
+            
+            // Determine if the user won the bet
+            if let matchInfo = matchInfos[betHistory.matchid],
+               self?.determineIfUserWon(betHistory: betHistory, matchInfo: matchInfo) == true {
+                userData.bettingPoints += betHistory.totalwinning // Update points
+                batch.updateData(["bettingPoints": userData.bettingPoints], forDocument: userRef)
+            }
+            
+            // Query the 'bethistory' collection for the specific bet
+            db.collection("bethistory")
+                .whereField("UID", isEqualTo: uid)
+                .whereField("matchid", isEqualTo: betHistory.matchid)
+                .getDocuments { (querySnapshot, error) in
+                    if let error = error {
+                        print("Error getting documents: \(error)")
+                        completion()
+                        return
+                    }
+                    
+                    guard let document = querySnapshot?.documents.first else {
+                        print("No matching bet history document found")
+                        completion()
+                        return
+                    }
+                    
+                    // Reference to the specific betHistory document
+                    let betHistoryRef = document.reference
+                    batch.updateData(["status": true], forDocument: betHistoryRef)
+                    
+                    // Commit the batch
+                    batch.commit { err in
+                        if let err = err {
+                            print("Error writing batch: \(err)")
+                        } else {
+                            print("Batch write succeeded.")
+                        }
+                        completion()
+                    }
+                }
+        }
+    }
+    
+    
+    // Helper method to determine if the user won the bet
+    func determineIfUserWon(betHistory: BetHistory, matchInfo: MatchInfo) -> Bool {
+        guard let awayScore = Int(matchInfo.away_score),
+              let homeScore = Int(matchInfo.home_score) else {
+            return false
+        }
+        
+        let winningTeam = awayScore > homeScore ? matchInfo.away : matchInfo.home
+        return betHistory.selectTeam == winningTeam
+    }
 }
-
 struct BetHistory: Codable {
     var matchid: String
     var UID: String
     var selectTeam: String
+    var otherTeam: String
     var status: Bool
     var time: String
     var totalwinning: Double
