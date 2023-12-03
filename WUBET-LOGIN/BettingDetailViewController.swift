@@ -98,6 +98,7 @@ class BettingDetailViewController: UIViewController {
                 let totalwinning=number*team1.0
                 let newData: [String: Any] = [
                     "time": time,
+                    "betting_amount": number,
                     "totalwinning":totalwinning,
                     "selectTeam":home,
                     "otherTeam":away,
