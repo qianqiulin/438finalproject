@@ -11,6 +11,38 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
     var userID:String=""
     var gameinfo:[Gameinfo] = []
     var UID:String=""
+    let nbaTeamAbbreviations = [
+        "Atlanta Hawks": "ATL",
+        "Boston Celtics": "BOS",
+        "Brooklyn Nets": "BKN",
+        "Charlotte Hornets": "CHA",
+        "Chicago Bulls": "CHI",
+        "Cleveland Cavaliers": "CLE",
+        "Dallas Mavericks": "DAL",
+        "Denver Nuggets": "DEN",
+        "Detroit Pistons": "DET",
+        "Golden State Warriors": "GSW",
+        "Houston Rockets": "HOU",
+        "Indiana Pacers": "IND",
+        "Los Angeles Clippers": "LAC",
+        "Los Angeles Lakers": "LAL",
+        "Memphis Grizzlies": "MEM",
+        "Miami Heat": "MIA",
+        "Milwaukee Bucks": "MIL",
+        "Minnesota Timberwolves": "MIN",
+        "New Orleans Pelicans": "NOP",
+        "New York Knicks": "NYK",
+        "Oklahoma City Thunder": "OKC",
+        "Orlando Magic": "ORL",
+        "Philadelphia 76ers": "PHI",
+        "Phoenix Suns": "PHX",
+        "Portland Trail Blazers": "POR",
+        "Sacramento Kings": "SAC",
+        "San Antonio Spurs": "SAS",
+        "Toronto Raptors": "TOR",
+        "Utah Jazz": "UTA",
+        "Washington Wizards": "WAS"
+    ]
     @IBOutlet weak var GameCollectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -93,22 +125,9 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
         }
     }
     var db: Firestore!
-//    func getCollection(){
-//        db.collection("matchinfo").getDocuments { (querySnapshot, error) in
-//            if let error = error {
-//                print("Error getting documents: \(error)")
-//            } else {
-//                guard let querySnapshot = querySnapshot else {
-//                    print("No documents found.")
-//                    return
-//                }
-//
-//                for document in querySnapshot.documents {
-//                    print("\(document.documentID): \(document.data())")
-//                }
-//            }
-//        }
-//    }
+    func getTeamAbbreviation(for teamName: String) -> String {
+        return nbaTeamAbbreviations[teamName] ?? teamName
+    }
     func addCompletedMatchInfo() {
         let urlString = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=3&apiKey=aca376adaa18a88798937e298ae6a72e"
 
