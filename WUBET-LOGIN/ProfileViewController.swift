@@ -122,7 +122,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                                   details: details,
                                   profit: profitText,
                                   profitColor: profitColor,
-                                  imageName: "nba"))
+                                  imageName: getTeamAbbreviation(for: betHistory.selectTeam)))
 
         return cell
     }
