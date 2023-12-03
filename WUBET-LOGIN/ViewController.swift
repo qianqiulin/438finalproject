@@ -9,6 +9,10 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 class ViewController: UIViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupDarkModeObserver()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +21,26 @@ class ViewController: UIViewController {
         db = Firestore.firestore()
         // Do any additional setup after loading the view.
         //getCollection()
+        setupDarkModeObserver()
     }
+    
+    func setupDarkModeObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(darkModeChanged), name: Notification.Name("DarkModeChanged"), object: nil)
+        updateDarkMode()
+    }
+    
+    @objc func darkModeChanged() {
+        updateDarkMode()
+    }
+    
+    func updateDarkMode() {
+        if DarkModeManager.shared.isDarkModeEnabled {
+            view.backgroundColor = .darkGray
+        } else {
+            view.backgroundColor = .white
+        }
+    }
+    
     var db: Firestore!
     func getCollection(){
         db.collection("matchinfo").getDocuments { (querySnapshot, error) in

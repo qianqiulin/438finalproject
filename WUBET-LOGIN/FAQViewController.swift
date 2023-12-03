@@ -1,21 +1,18 @@
 //
-//  TabBarViewController.swift
+//  FrequentlyAskedQuestionsViewController.swift
 //  WUBET-LOGIN
 //
-//  Created by 钱秋霖 on 2023/11/30.
+//  Created by McKelvey Student on 12/3/23.
 //
 
+import Foundation
 import UIKit
 
-class TabBarViewController: UITabBarController {
-    var UID:String=""
+class FrequentlyAskedQuestionsViewController:UIViewController {
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         setupDarkModeObserver()
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         setupDarkModeObserver()
     }
@@ -36,16 +33,4 @@ class TabBarViewController: UITabBarController {
             view.backgroundColor = .white
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

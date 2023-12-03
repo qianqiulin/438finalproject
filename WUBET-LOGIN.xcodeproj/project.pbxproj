@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F901A732B1C76F400D49EB6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A722B1C76F400D49EB6 /* SettingsViewController.swift */; };
+		3F901A752B1C771600D49EB6 /* FavoriteTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A742B1C771600D49EB6 /* FavoriteTeamViewController.swift */; };
+		3F901A772B1C772200D49EB6 /* SmallTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A762B1C772200D49EB6 /* SmallTeamCell.swift */; };
+		3F901A792B1C773B00D49EB6 /* AccountInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A782B1C773B00D49EB6 /* AccountInformationViewController.swift */; };
+		3F901A7B2B1C774B00D49EB6 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A7A2B1C774B00D49EB6 /* DarkModeManager.swift */; };
+		3F901A7D2B1C775A00D49EB6 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A7C2B1C775A00D49EB6 /* HowToPlayViewController.swift */; };
+		3F901A7F2B1C776A00D49EB6 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F901A7E2B1C776A00D49EB6 /* FAQViewController.swift */; };
 		72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */; };
 		72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228132B02E0F100A04D93 /* GamblingViewController.swift */; };
 		72D228162B02E15D00A04D93 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228152B02E15D00A04D93 /* Struct.swift */; };
@@ -49,6 +56,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F901A722B1C76F400D49EB6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3F901A742B1C771600D49EB6 /* FavoriteTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeamViewController.swift; sourceTree = "<group>"; };
+		3F901A762B1C772200D49EB6 /* SmallTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTeamCell.swift; sourceTree = "<group>"; };
+		3F901A782B1C773B00D49EB6 /* AccountInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationViewController.swift; sourceTree = "<group>"; };
+		3F901A7A2B1C774B00D49EB6 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
+		3F901A7C2B1C775A00D49EB6 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		3F901A7E2B1C776A00D49EB6 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		72D228132B02E0F100A04D93 /* GamblingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamblingViewController.swift; sourceTree = "<group>"; };
 		72D228152B02E15D00A04D93 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
@@ -141,6 +155,13 @@
 				BF81B1A12AFF5ECC004AC194 /* Info.plist */,
 				72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */,
 				72D228132B02E0F100A04D93 /* GamblingViewController.swift */,
+				3F901A722B1C76F400D49EB6 /* SettingsViewController.swift */,
+				3F901A742B1C771600D49EB6 /* FavoriteTeamViewController.swift */,
+				3F901A762B1C772200D49EB6 /* SmallTeamCell.swift */,
+				3F901A782B1C773B00D49EB6 /* AccountInformationViewController.swift */,
+				3F901A7A2B1C774B00D49EB6 /* DarkModeManager.swift */,
+				3F901A7C2B1C775A00D49EB6 /* HowToPlayViewController.swift */,
+				3F901A7E2B1C776A00D49EB6 /* FAQViewController.swift */,
 				72D228152B02E15D00A04D93 /* Struct.swift */,
 				72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */,
 			);
@@ -305,17 +326,24 @@
 			files = (
 				A2F4945C2B19A896009153BD /* FirestoreManager.swift in Sources */,
 				BF81B1C62AFF672C004AC194 /* CreateAccountViewController.swift in Sources */,
+				3F901A7B2B1C774B00D49EB6 /* DarkModeManager.swift in Sources */,
 				BF81B1C42AFF6615004AC194 /* LoginViewController.swift in Sources */,
 				72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */,
 				BF81B1982AFF5EC9004AC194 /* ViewController.swift in Sources */,
+				3F901A7D2B1C775A00D49EB6 /* HowToPlayViewController.swift in Sources */,
 				72E35C452B195C79003F1BCB /* TabBarViewController.swift in Sources */,
 				72D228162B02E15D00A04D93 /* Struct.swift in Sources */,
 				BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */,
 				A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */,
+				3F901A732B1C76F400D49EB6 /* SettingsViewController.swift in Sources */,
+				3F901A792B1C773B00D49EB6 /* AccountInformationViewController.swift in Sources */,
+				3F901A7F2B1C776A00D49EB6 /* FAQViewController.swift in Sources */,
 				72E35C432B11714E003F1BCB /* BettingDetailViewController.swift in Sources */,
 				A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */,
 				BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */,
 				72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */,
+				3F901A772B1C772200D49EB6 /* SmallTeamCell.swift in Sources */,
+				3F901A752B1C771600D49EB6 /* FavoriteTeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
