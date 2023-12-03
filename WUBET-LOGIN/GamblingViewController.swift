@@ -51,11 +51,14 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GameCollectionViewCell
-        let guest=games[indexPath.row].away_team
-        let home=games[indexPath.row].home_team
-        let gamestring="\(guest)\nvs\n\(home)"
-        cell.gamename.numberOfLines=0
+        let guest=getTeamAbbreviation(for: games[indexPath.row].away_team)
+        let home=getTeamAbbreviation(for: games[indexPath.row].home_team)
+        let matchtime=convertToUserFriendlyDate(games[indexPath.row].commence_time)
+        let gamestring="\(guest)  vs  \(home)"
         cell.gamename.text=gamestring
+        cell.homeImage.image=UIImage(named: guest)
+        cell.GuestImage.image=UIImage(named: home)
+        cell.timeText.text=matchtime
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -128,6 +131,22 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
     func getTeamAbbreviation(for teamName: String) -> String {
         return nbaTeamAbbreviations[teamName] ?? teamName
     }
+    func convertToUserFriendlyDate(_ isoDateString: String) -> String {
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+
+        let userFriendlyDateFormatter = DateFormatter()
+        userFriendlyDateFormatter.dateStyle = .medium
+        userFriendlyDateFormatter.timeStyle = .short
+        userFriendlyDateFormatter.timeZone = TimeZone.current
+
+        if let date = isoDateFormatter.date(from: isoDateString) {
+            return userFriendlyDateFormatter.string(from: date)
+        } else {
+            return "Invalid Date"
+       
+        }
+    }
     func addCompletedMatchInfo() {
         let urlString = "https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=3&apiKey=aca376adaa18a88798937e298ae6a72e"
 
@@ -181,19 +200,19 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
 
 
 }
-extension GamblingViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = 300.0
-        let cellHeight = 300.0
-
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3.0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 3.0
-    }
-}
+//extension GamblingViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let cellWidth = 300.0
+//        let cellHeight = 300.0
+//
+//        return CGSize(width: cellWidth, height: cellHeight)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 3.0
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 3.0
+//    }
+//}
