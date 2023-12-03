@@ -107,7 +107,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         if matchFinished, let matchInfo = matchInfos[betHistory.matchid] {
             let userWon = determineIfUserWon(betHistory: betHistory, matchInfo: matchInfo)
             profitColor = userWon ? .green : .red
-            profitText = userWon ? String(format: "+%.2f", betHistory.totalwinning) : "+0"
+            profitText = userWon ? String(format: "+%.2f", betHistory.totalwinning) :  String(format: "-%.2f", betHistory.bettingAmount)
             details = "Bet: \(userBetChoice) - Score: \(matchInfo.away_score) - \(matchInfo.home_score)"
             matchupName = "\(getTeamAbbreviation(for: matchInfo.away)) vs \(getTeamAbbreviation(for: matchInfo.home))"
         } else {
@@ -155,6 +155,53 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    @IBAction func addMoneyButtonTapped(_ sender: UIButton) {
+           showAddMoneyPopup()
+       }
+    
+    func showAddMoneyPopup() {
+            let alertController = UIAlertController(title: "Add Points", message: "Enter the amount to add", preferredStyle: .alert)
+
+            alertController.addTextField { textField in
+                textField.placeholder = "Amount"
+                textField.keyboardType = .numberPad
+            }
+
+        let addAction = UIAlertAction(title: "Add", style: .default) { [weak self, weak alertController] _ in
+            guard let textField = alertController?.textFields?.first,
+                  let amountString = textField.text,
+                  let amount = Double(amountString), amount > 0 else {
+                         self?.showAlert(title: "Invalid Input", message: "Please enter a positive number.")
+                         return
+                     }
+
+                     guard let userUID = Auth.auth().currentUser?.uid else { return }
+
+            self?.firestoreManager.updateUserBettingPoints(uid: userUID, newAmount: amount) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        self?.showAlert(title: "Success", message: "Amount added successfully")
+                    } else {
+                        self?.showAlert(title: "Error", message: "Failed to add amount")
+                    }
+                }
+            }
+        }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+            alertController.addAction(addAction)
+            alertController.addAction(cancelAction)
+
+            self.present(alertController, animated: true)
+        }
+    
+    func showAlert(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData {
@@ -174,7 +221,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 if let userData = userData {
                     let displayName = userData.userName?.isEmpty == false ? userData.userName! : "User"
                     self?.nameLabel.text = displayName
-                    self?.tokensLabel.text = "Points: \(userData.bettingPoints)"
+                    self?.tokensLabel.text = "Points: \(String(format: "%.2f", userData.bettingPoints))"
                 }
             }
         }

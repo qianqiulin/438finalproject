@@ -21,7 +21,7 @@ class GameTableViewCell: UITableViewCell {
         if let image = UIImage(named: game.imageName) {
             gameImageView.image = image
         } else {
-            gameImageView.image = UIImage(named: "gameImageName1") // Replace with your default image name
+            gameImageView.image = UIImage(named: "gameImageName1") 
         }
     }
     
