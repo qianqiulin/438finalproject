@@ -325,20 +325,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Amount:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwI-Tp-m7q">
-                                <rect key="frame" x="245" y="103" width="107" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Peter!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-t8-uq4">
-                                <rect key="frame" x="16" y="77" width="191" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4bC-jv-2TS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -346,8 +332,6 @@
                     <navigationItem key="navigationItem" id="qRg-0Y-ePR"/>
                     <connections>
                         <outlet property="GameCollectionView" destination="hqz-oB-WeB" id="yTo-ho-R6w"/>
-                        <outlet property="UserAmountText" destination="GwI-Tp-m7q" id="ijw-OA-JLg"/>
-                        <outlet property="userGreetingText" destination="Xbh-t8-uq4" id="xuR-8y-mmy"/>
                         <segue destination="nfw-YI-66z" kind="show" identifier="ToBettingDetail" id="Xfb-oy-gsn"/>
                     </connections>
                 </viewController>
@@ -836,7 +820,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="99" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bX-Y8-Rxz">
-                                <rect key="frame" x="16" y="121" width="361" height="142.33333333333337"/>
+                                <rect key="frame" x="16" y="121.00000000000001" width="361" height="142.33333333333337"/>
                                 <string key="text">TO PREFACE: SPORTS BETTING IS ILLEGAL IN THE STATE OF MISSOURI, AND WE DO NOT CONDONE GAMBLING WITH REAL CURRENCY. ALL FUNDS IN THIS APP ARE VIRTUAL AND CANNOT BE USED TO PURCHASE ANYTHING OF ACTUAL MONETARY VALUE. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

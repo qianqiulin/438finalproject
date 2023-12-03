@@ -93,23 +93,23 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
                 self.GameCollectionView.reloadData()
             }
         }
-        let firestoreManager = FirestoreManager()
-        firestoreManager.fetchUserData(uid: UID) { [weak self] userData in
-            DispatchQueue.main.async {
-
-                if let userData = userData {
-                                    print("User Data received: \(userData)")
-                                    self?.userName = userData.userName ?? "User"
-                    self?.userPoints = userData.bettingPoints
-                                    // Optional: handle favorite team
-                                } else {
-                                    print("Failed to fetch user data or data is nil.")
-                                }
-                
-            }
-        }
-        UserAmountText.text="Current Amount:\(self.userPoints)"
-        userGreetingText.text="Hello \(self.userName)"
+//        let firestoreManager = FirestoreManager()
+//        firestoreManager.fetchUserData(uid: UID) { [weak self] userData in
+//            DispatchQueue.main.async {
+//
+//                if let userData = userData {
+//                                    print("User Data received: \(userData)")
+//                                    self?.userName = userData.userName ?? "User"
+//                    self?.userPoints = userData.bettingPoints
+//                                    // Optional: handle favorite team
+//                                } else {
+//                                    print("Failed to fetch user data or data is nil.")
+//                                }
+//                
+//            }
+//        }
+//        UserAmountText.text="Current Amount:\(self.userPoints)"
+//        userGreetingText.text="Hello \(self.userName)"
         
         setupDarkModeObserver()
     }
