@@ -68,6 +68,7 @@
 		72D228152B02E15D00A04D93 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingDetailViewController.swift; sourceTree = "<group>"; };
 		72E35C442B195C79003F1BCB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		72E35C462B1D460F003F1BCB /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		A261CDA52B02FA2000A39605 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A261CDAB2B031BC700A39605 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		A2F4945B2B19A896009153BD /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 				3F901A7E2B1C776A00D49EB6 /* FAQViewController.swift */,
 				72D228152B02E15D00A04D93 /* Struct.swift */,
 				72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */,
+				72E35C462B1D460F003F1BCB /* ReadMe.md */,
 			);
 			path = "WUBET-LOGIN";
 			sourceTree = "<group>";
