@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iC7-Hw-5Ow">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -462,10 +463,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rbb-Ui-ErG">
-                                <rect key="frame" x="0.0" y="291" width="393" height="509"/>
+                                <rect key="frame" x="0.0" y="254" width="393" height="515"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="509" id="dwr-0E-qMJ"/>
+                                    <constraint firstAttribute="height" constant="515" id="dwr-0E-qMJ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="historyCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameTableViewCell" rowHeight="95" id="WDF-ID-Kgo" customClass="GameTableViewCell" customModule="WUBET_LOGIN" customModuleProvider="target">
@@ -585,25 +586,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="gameImageName1" translatesAutoresizingMaskIntoConstraints="NO" id="g43-Sh-zIQ">
-                                <rect key="frame" x="145" y="172" width="103" height="111"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-QD-YZK">
+                                <rect key="frame" x="279" y="135" width="35" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="+"/>
+                                <connections>
+                                    <action selector="addMoneyButtonTapped:" destination="Ucj-iz-Gb4" eventType="touchUpInside" id="MPG-d9-0Jf"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="gameImageName1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g43-Sh-zIQ">
+                                <rect key="frame" x="151" y="172" width="91" height="74"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XHN-32-DZh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="Rbb-Ui-ErG" secondAttribute="bottom" constant="-31" id="32J-V6-myN"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Rbb-Ui-ErG" secondAttribute="bottom" id="32J-V6-myN"/>
                             <constraint firstItem="g43-Sh-zIQ" firstAttribute="centerX" secondItem="WdK-Cy-98e" secondAttribute="centerX" id="4Q3-Oe-RoP"/>
                             <constraint firstItem="XHN-32-DZh" firstAttribute="trailing" secondItem="zUj-EH-oQL" secondAttribute="trailing" constant="34" id="8kz-v2-KAb"/>
                             <constraint firstItem="qOI-xI-QIi" firstAttribute="top" secondItem="zUj-EH-oQL" secondAttribute="bottom" constant="3" id="Gls-9B-uHY"/>
+                            <constraint firstItem="UOy-QD-YZK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qOI-xI-QIi" secondAttribute="trailing" constant="8" symbolic="YES" id="I0E-Or-udM"/>
                             <constraint firstItem="Rbb-Ui-ErG" firstAttribute="top" secondItem="g43-Sh-zIQ" secondAttribute="bottom" constant="8" id="S5d-oY-TWK"/>
+                            <constraint firstItem="XHN-32-DZh" firstAttribute="trailing" secondItem="UOy-QD-YZK" secondAttribute="trailing" constant="79" id="WHT-2O-P4v"/>
                             <constraint firstItem="Rbb-Ui-ErG" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" id="iar-5S-xsX"/>
                             <constraint firstItem="g43-Sh-zIQ" firstAttribute="centerX" secondItem="qOI-xI-QIi" secondAttribute="centerX" constant="-0.16666666666665719" id="jTq-Jf-mzw"/>
-                            <constraint firstItem="g43-Sh-zIQ" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" constant="145" id="lt4-3H-GI5"/>
+                            <constraint firstItem="g43-Sh-zIQ" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" constant="151" id="lt4-3H-GI5"/>
                             <constraint firstItem="g43-Sh-zIQ" firstAttribute="top" secondItem="qOI-xI-QIi" secondAttribute="bottom" constant="8" symbolic="YES" id="ohg-cD-eEX"/>
                             <constraint firstItem="zUj-EH-oQL" firstAttribute="top" secondItem="XHN-32-DZh" secondAttribute="top" id="p0G-TM-vBO"/>
                             <constraint firstItem="Rbb-Ui-ErG" firstAttribute="centerX" secondItem="g43-Sh-zIQ" secondAttribute="centerX" id="vrA-cx-hYG"/>
                             <constraint firstItem="zUj-EH-oQL" firstAttribute="leading" secondItem="XHN-32-DZh" secondAttribute="leading" constant="28" id="x4A-gF-xiT"/>
+                            <constraint firstItem="UOy-QD-YZK" firstAttribute="top" secondItem="XHN-32-DZh" secondAttribute="top" constant="32" id="yZe-o5-Ia2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="YmJ-Dw-Ihy"/>
