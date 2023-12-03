@@ -17,24 +17,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupDarkModeObserver()
-    }
-    
-    func setupDarkModeObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeChanged), name: Notification.Name("DarkModeChanged"), object: nil)
-        updateDarkMode()
-    }
-    
-    @objc func darkModeChanged() {
-        updateDarkMode()
-    }
-    
-    func updateDarkMode() {
-        if DarkModeManager.shared.isDarkModeEnabled {
-            view.backgroundColor = .darkGray
-        } else {
-            view.backgroundColor = .white
-        }
     }
     
     @IBAction func loginClicked(_ sender: UIButton) {

@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FCEA2082B1BC2F1001769DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEA2072B1BC2F1001769DE /* SettingsViewController.swift */; };
-		3FCEA20A2B1BE773001769DE /* FavoriteTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEA2092B1BE773001769DE /* FavoriteTeamViewController.swift */; };
-		3FCEA20C2B1BF3D1001769DE /* SmallTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEA20B2B1BF3D1001769DE /* SmallTeamCell.swift */; };
-		3FFBCFF42B1C3C29000A4F38 /* AccountInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBCFF32B1C3C29000A4F38 /* AccountInformationViewController.swift */; };
-		3FFBCFF62B1C4BA6000A4F38 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBCFF52B1C4BA6000A4F38 /* DarkModeManager.swift */; };
-		3FFBCFF82B1C5398000A4F38 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBCFF72B1C5398000A4F38 /* HowToPlayViewController.swift */; };
-		3FFBCFFA2B1C5403000A4F38 /* FrequentlyAskedQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBCFF92B1C5403000A4F38 /* FrequentlyAskedQuestionsViewController.swift */; };
 		72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */; };
 		72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228132B02E0F100A04D93 /* GamblingViewController.swift */; };
 		72D228162B02E15D00A04D93 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D228152B02E15D00A04D93 /* Struct.swift */; };
@@ -56,13 +49,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3FCEA2072B1BC2F1001769DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3FCEA2092B1BE773001769DE /* FavoriteTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTeamViewController.swift; sourceTree = "<group>"; };
-		3FCEA20B2B1BF3D1001769DE /* SmallTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTeamCell.swift; sourceTree = "<group>"; };
-		3FFBCFF32B1C3C29000A4F38 /* AccountInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationViewController.swift; sourceTree = "<group>"; };
-		3FFBCFF52B1C4BA6000A4F38 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
-		3FFBCFF72B1C5398000A4F38 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
-		3FFBCFF92B1C5403000A4F38 /* FrequentlyAskedQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedQuestionsViewController.swift; sourceTree = "<group>"; };
 		72D228112B02E0B200A04D93 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
 		72D228132B02E0F100A04D93 /* GamblingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamblingViewController.swift; sourceTree = "<group>"; };
 		72D228152B02E15D00A04D93 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
@@ -157,13 +143,6 @@
 				72D228132B02E0F100A04D93 /* GamblingViewController.swift */,
 				72D228152B02E15D00A04D93 /* Struct.swift */,
 				72E35C422B11714E003F1BCB /* BettingDetailViewController.swift */,
-				3FCEA2072B1BC2F1001769DE /* SettingsViewController.swift */,
-				3FCEA2092B1BE773001769DE /* FavoriteTeamViewController.swift */,
-				3FCEA20B2B1BF3D1001769DE /* SmallTeamCell.swift */,
-				3FFBCFF32B1C3C29000A4F38 /* AccountInformationViewController.swift */,
-				3FFBCFF52B1C4BA6000A4F38 /* DarkModeManager.swift */,
-				3FFBCFF72B1C5398000A4F38 /* HowToPlayViewController.swift */,
-				3FFBCFF92B1C5403000A4F38 /* FrequentlyAskedQuestionsViewController.swift */,
 			);
 			path = "WUBET-LOGIN";
 			sourceTree = "<group>";
@@ -326,24 +305,17 @@
 			files = (
 				A2F4945C2B19A896009153BD /* FirestoreManager.swift in Sources */,
 				BF81B1C62AFF672C004AC194 /* CreateAccountViewController.swift in Sources */,
-				3FFBCFF62B1C4BA6000A4F38 /* DarkModeManager.swift in Sources */,
 				BF81B1C42AFF6615004AC194 /* LoginViewController.swift in Sources */,
-				3FFBCFFA2B1C5403000A4F38 /* FrequentlyAskedQuestionsViewController.swift in Sources */,
 				72D228122B02E0B200A04D93 /* GameCollectionViewCell.swift in Sources */,
 				BF81B1982AFF5EC9004AC194 /* ViewController.swift in Sources */,
-				3FFBCFF82B1C5398000A4F38 /* HowToPlayViewController.swift in Sources */,
 				72E35C452B195C79003F1BCB /* TabBarViewController.swift in Sources */,
 				72D228162B02E15D00A04D93 /* Struct.swift in Sources */,
 				BF81B1942AFF5EC9004AC194 /* AppDelegate.swift in Sources */,
 				A261CDAC2B031BC700A39605 /* GameTableViewCell.swift in Sources */,
-				3FCEA2082B1BC2F1001769DE /* SettingsViewController.swift in Sources */,
-				3FFBCFF42B1C3C29000A4F38 /* AccountInformationViewController.swift in Sources */,
 				72E35C432B11714E003F1BCB /* BettingDetailViewController.swift in Sources */,
 				A261CDA62B02FA2000A39605 /* ProfileViewController.swift in Sources */,
 				BF81B1962AFF5EC9004AC194 /* SceneDelegate.swift in Sources */,
 				72D228142B02E0F100A04D93 /* GamblingViewController.swift in Sources */,
-				3FCEA20C2B1BF3D1001769DE /* SmallTeamCell.swift in Sources */,
-				3FCEA20A2B1BE773001769DE /* FavoriteTeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

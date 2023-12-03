@@ -107,23 +107,6 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
                                 }
                 
             }
-        setupDarkModeObserver()
-    }
-    
-    func setupDarkModeObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeChanged), name: Notification.Name("DarkModeChanged"), object: nil)
-        updateDarkMode()
-    }
-    
-    @objc func darkModeChanged() {
-        updateDarkMode()
-    }
-    
-    func updateDarkMode() {
-        if DarkModeManager.shared.isDarkModeEnabled {
-            view.backgroundColor = .darkGray
-        } else {
-            view.backgroundColor = .white
         }
         UserAmountText.text="Current Amount:\(self.userPoints)"
         userGreetingText.text="Hello \(self.userName)"
