@@ -1,21 +1,17 @@
 //
-//  TabBarViewController.swift
+//  HowToPlayViewController.swift
 //  WUBET-LOGIN
 //
-//  Created by 钱秋霖 on 2023/11/30.
+//  Created by McKelvey Student on 12/3/23.
 //
 
+import Foundation
 import UIKit
 
-class TabBarViewController: UITabBarController {
-    var UID:String=""
+class HowToPlayViewController:UIViewController{
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         setupDarkModeObserver()
     }
-    
     func setupDarkModeObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(darkModeChanged), name: Notification.Name("DarkModeChanged"), object: nil)
         updateDarkMode()
@@ -32,15 +28,4 @@ class TabBarViewController: UITabBarController {
             view.backgroundColor = .white
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
