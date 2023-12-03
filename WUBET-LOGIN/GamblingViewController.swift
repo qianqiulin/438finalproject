@@ -4,13 +4,17 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 class GamblingViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+    @IBOutlet weak var UserAmountText: UILabel!
     var games:[Game] = []
     let sportsname="basketball_nba"
+    @IBOutlet weak var userGreetingText: UILabel!
     let api_key="aca376adaa18a88798937e298ae6a72e"
     let reuseIdentifier = "gameCell"
     var userID:String=""
     var gameinfo:[Gameinfo] = []
     var UID:String=""
+    var userName=""
+    var userPoints=0.0
     let nbaTeamAbbreviations = [
         "Atlanta Hawks": "ATL",
         "Boston Celtics": "BOS",
@@ -89,6 +93,23 @@ class GamblingViewController: UIViewController,UICollectionViewDataSource,UIColl
                 self.GameCollectionView.reloadData()
             }
         }
+        let firestoreManager = FirestoreManager()
+        firestoreManager.fetchUserData(uid: UID) { [weak self] userData in
+            DispatchQueue.main.async {
+
+                if let userData = userData {
+                                    print("User Data received: \(userData)")
+                                    self?.userName = userData.userName ?? "User"
+                    self?.userPoints = userData.bettingPoints
+                                    // Optional: handle favorite team
+                                } else {
+                                    print("Failed to fetch user data or data is nil.")
+                                }
+                
+            }
+        }
+        UserAmountText.text="Current Amount:\(self.userPoints)"
+        userGreetingText.text="Hello \(self.userName)"
     }
     func fetchUpcomingGames(){
         let urlString = "https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?apiKey=aca376adaa18a88798937e298ae6a72e&regions=us&markets=h2h"

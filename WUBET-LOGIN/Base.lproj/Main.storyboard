@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hqz-oB-WeB">
-                                <rect key="frame" x="16" y="103" width="361" height="666"/>
+                                <rect key="frame" x="16" y="157" width="361" height="612"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QMW-GO-0b2">
@@ -341,6 +341,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Amount:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwI-Tp-m7q">
+                                <rect key="frame" x="245" y="103" width="107" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Peter!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-t8-uq4">
+                                <rect key="frame" x="16" y="77" width="191" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4bC-jv-2TS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -348,6 +362,8 @@
                     <navigationItem key="navigationItem" id="qRg-0Y-ePR"/>
                     <connections>
                         <outlet property="GameCollectionView" destination="hqz-oB-WeB" id="yTo-ho-R6w"/>
+                        <outlet property="UserAmountText" destination="GwI-Tp-m7q" id="ijw-OA-JLg"/>
+                        <outlet property="userGreetingText" destination="Xbh-t8-uq4" id="xuR-8y-mmy"/>
                         <segue destination="nfw-YI-66z" kind="show" identifier="ToBettingDetail" id="Xfb-oy-gsn"/>
                     </connections>
                 </viewController>
@@ -1032,7 +1048,7 @@
         <scene sceneID="WMw-fM-7c0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f87-Wf-jN6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bet" image="betting" id="Bzm-US-Gkz"/>
+                    <tabBarItem key="tabBarItem" title="Bet" image="basketball.fill" catalog="system" id="Bzm-US-Gkz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xkw-p1-34l">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1073,7 +1089,7 @@
         <image name="NBA Primary logo" width="1059" height="2400"/>
         <image name="arrowshape.turn.up.left.circle" catalog="system" width="128" height="123"/>
         <image name="basketball" catalog="system" width="128" height="123"/>
-        <image name="betting" width="25" height="25"/>
+        <image name="basketball.fill" catalog="system" width="128" height="123"/>
         <image name="gameImageName1" width="90" height="90"/>
         <image name="hand.point.up" catalog="system" width="106" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
