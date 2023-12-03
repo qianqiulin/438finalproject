@@ -137,6 +137,30 @@ class FirestoreManager {
         let winningTeam = awayScore > homeScore ? matchInfo.away : matchInfo.home
         return betHistory.selectTeam == winningTeam
     }
+    
+    func updateUserBettingPoints(uid: String, newAmount: Double, completion: @escaping (Bool) -> Void) {
+            let userRef = Firestore.firestore().collection("users").document(uid)
+            
+            userRef.getDocument { (document, error) in
+                if let document = document, var userData = document.data() {
+                    let currentPoints = userData["bettingPoints"] as? Double ?? 0
+                    userData["bettingPoints"] = currentPoints + newAmount
+                    
+                    userRef.updateData(userData) { error in
+                        if let error = error {
+                            print("Error updating betting points: \(error)")
+                            completion(false)
+                        } else {
+                            print("Betting points successfully updated.")
+                            completion(true)
+                        }
+                    }
+                } else {
+                    print("Document does not exist or error fetching document: \(error?.localizedDescription ?? "Unknown error")")
+                    completion(false)
+                }
+            }
+        }
 }
 struct BetHistory: Codable {
     var matchid: String
@@ -146,6 +170,7 @@ struct BetHistory: Codable {
     var status: Bool
     var time: String
     var totalwinning: Double
+    var bettingAmount: Double
 }
 
 struct MatchInfo: Codable {
