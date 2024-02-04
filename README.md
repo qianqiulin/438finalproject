@@ -1,1 +1,1 @@
-# 438finalproject
+# This is the WUBet project
